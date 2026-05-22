@@ -1,0 +1,30 @@
+# ─── Node / React (client) ────────────────────────
+client/node_modules/
+client/dist/
+client/.env
+
+# ─── Python / FastAPI (server) ────────────────────
+server/venv/
+server/__pycache__/
+server/app/__pycache__/
+server/app/routes/__pycache__/
+server/.env
+__pycache__/
+*.pyc
+*.pyo
+
+# ─── IDE / Editor ─────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── OS Files ─────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Misc ─────────────────────────────────────────
+*.log
+npm-debug.log*
