@@ -35,6 +35,18 @@ async def check_mongo_connection():
         print(f"\n❌ MongoDB connection FAILED: {e}\n")
 
 
+from fastapi.responses import JSONResponse
+import traceback
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request, exc):
+    print(f"Global exception: {exc}")
+    return JSONResponse(
+        status_code=500,
+        content={"detail": str(exc), "traceback": traceback.format_exc()},
+        headers={"Access-Control-Allow-Origin": "*"}
+    )
+
 @app.get("/")
 async def root():
     return {"message": "Task Manager API is running"}
