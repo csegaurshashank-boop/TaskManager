@@ -10,15 +10,11 @@ from app.database import client
 # Create FastAPI app
 app = FastAPI(title="Team Task Manager API", version="1.0.0")
 
-# Allow requests from React frontend (update origin for production)
+# Allow requests from any frontend origin (Vercel generates new URLs per deploy)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://task-manager-ten-olive-16.vercel.app",
-        "https://taskmanager-c9qg.onrender.com"
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
