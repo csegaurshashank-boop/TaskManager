@@ -15,7 +15,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://task-manager-ten-olive-16.vercel.app"
+        "https://task-manager-ten-olive-16.vercel.app",
+        "https://taskmanager-c9qg.onrender.com"
     ],
     allow_credentials=True,
     allow_methods=["*"],
