@@ -12,7 +12,9 @@ app = FastAPI(title="Team Task Manager API", version="1.0.0")
 # Allow requests from React frontend (update origin for production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://task-manager-ten-olive-16.vercel.app",],
+    allow_origins=[
+        "https://task-manager-ten-olive-16.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
